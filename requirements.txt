@@ -1,0 +1,21 @@
+# DeepDecoy v1.0 - Requirements
+# Python 3.10+ required
+
+# SSH Server
+paramiko>=3.4.0
+
+# OpenAI API
+openai>=1.12.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# Optional: Better terminal handling
+cryptography>=42.0.0
+
+# Web Server
+flask>=3.0.0
+
+# Testing & Quality (dev)
+pytest>=8.0.0
+flake8>=7.0.0

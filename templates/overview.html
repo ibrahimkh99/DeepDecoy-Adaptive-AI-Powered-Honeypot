@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DeepDecoy Dashboard - Overview</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { margin-bottom: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card { border: 1px solid #ddd; padding: 12px; border-radius: 6px; }
+    .bar { background: #3b82f6; height: 18px; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>DeepDecoy Dashboard</h1>
+  <div class="grid">
+    <div class="card">
+      <h3>Total Sessions</h3>
+      <p>{{ stats.total_sessions or 0 }}</p>
+    </div>
+    <div class="card">
+      <h3>Avg Engagement</h3>
+      <p>{{ stats.avg_engagement or 0 }}</p>
+    </div>
+    <div class="card">
+      <h3>Avg Threat</h3>
+      <p>{{ stats.avg_threat or 0 }}</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;">
+    <h3>Sessions per Persona</h3>
+    {% if stats.sessions_per_persona %}
+      {% for p in stats.sessions_per_persona %}
+        <div>
+          <strong>{{ p[0] }}</strong>
+          <div class="bar" style="width: {{ (p[1] or 0) * 20 }}px"></div>
+          <small>{{ p[1] }}</small>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No data yet.</p>
+    {% endif %}
+  </div>
+  <p style="margin-top:20px;">Tip: Run learning job to populate metrics.</p>
+</body>
+</html>

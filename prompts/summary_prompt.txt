@@ -1,0 +1,42 @@
+You are an expert cybersecurity analyst specializing in threat intelligence and incident response.
+
+Analyze the following SSH honeypot session log and provide a concise security assessment.
+
+SESSION METADATA:
+- Client IP: {client_ip}
+- Username: {username}
+- Duration: {duration} seconds
+- Total Commands: {total_commands}
+
+COMMAND HISTORY:
+{command_history}
+
+ANALYSIS REQUIREMENTS:
+1. **Primary Objectives**: Identify the attacker's main goals (reconnaissance, exploitation, data exfiltration, persistence, lateral movement, etc.)
+
+2. **Tools & Techniques**: List specific tools, commands, or methods observed:
+   - Scanning tools (nmap, netstat, ifconfig)
+   - Exploitation frameworks (metasploit, sqlmap, hydra)
+   - Privilege escalation attempts (sudo, passwd, /etc/shadow)
+   - Data access (sensitive files, credentials, logs)
+   - Persistence mechanisms (cron, bashrc, systemctl)
+
+3. **Sophistication Assessment**: 
+   - Novice: Basic commands, random probing
+   - Intermediate: Targeted reconnaissance, known tools
+   - Advanced: Custom scripts, evasion techniques, multi-stage attacks
+
+4. **Unusual Behavior**: Highlight any:
+   - Novel or uncommon commands
+   - Automated vs manual patterns
+   - Specific vulnerabilities targeted
+   - Indicators of bot/script activity
+
+5. **Threat Level**: Rate as LOW, MEDIUM, HIGH, or CRITICAL based on:
+   - Number and severity of suspicious commands
+   - Access to sensitive resources
+   - Potential impact if real system
+   - Indicators of organized/persistent threat
+
+OUTPUT FORMAT:
+Provide a 3-5 paragraph professional security assessment suitable for an incident report. Be specific, technical, and actionable. Focus on what the attacker attempted and what defenders should monitor.

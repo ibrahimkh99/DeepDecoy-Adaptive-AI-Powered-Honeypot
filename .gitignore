@@ -1,0 +1,47 @@
+# DeepDecoy - AI-Powered SSH Honeypot
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ignore environment variables
+.env
+.env.*
+*.env
+
+# Ignore SSH keys
+*.key
+*.pem
+
+# Ignore logs
+logs/
+*.log
+web_logs/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
